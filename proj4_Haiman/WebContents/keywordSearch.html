@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ebay Keyword Search</title>
+		<meta charset = "utf-8"> 
+		<link rel = "stylesheet" type = "text/css" href = "autosuggest.css" />
+		<!--How to use the Javascript-->
+		<script type="text/javascript"></script>
+		<script type="text/javascript"></script>
+		<script type="text/javascript">
+		window.onload = function () {
+                var oTextbox = new AutoSuggestControl(document.getElementById("searchInput"));        
+            }</script>
+	</head>
+	<body>
+		<div class = "wrapper">
+			<a href="keywordSearch.html"><img src="img/logo.png"></a>
+			<form method = "GET" action = "search"> 
+				<input type = "text" id = "searchInput" name = "q">
+				<!--How to "let the form automatically generate appropriate values"-->
+				<input type = "hidden" name = "numResultsToSkip" value = "0">
+				<input type = "hidden" name = "numResultsToReturn" value = "15">
+				<input type = "submit" value = "Search">
+			</form>
+		</div>
+	</body>
+</html>

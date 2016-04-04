@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ant
+ant run-all
+
+#eliminate duplication
+sort item.dat | uniq > item_uniq.dat
+sort seller.dat | uniq > seller_uniq.dat
+sort bidder.dat | uniq > bidder_uniq.dat
+sort bidInfo.dat | uniq > bidInfo_uniq.dat
+sort category.dat | uniq > category_uniq.dat
+
+mysql CS144 < drop.sql
+mysql CS144 < create.sql
+mysql CS144 < load.sql
+
+rm *.dat
+
